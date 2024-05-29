@@ -1,6 +1,7 @@
 package com.bahrlou.samplevideoplayer
 
 import android.media.MediaPlayer
+import android.media.session.MediaController
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -10,6 +11,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.bahrlou.samplevideoplayer.databinding.ActivityMainBinding
 
 val videoUrl = ""
+
 class MainActivity : AppCompatActivity() {
     private lateinit var player: MediaPlayer
     private lateinit var binding: ActivityMainBinding
@@ -27,5 +29,25 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
+        binding.videoViewMain.setVideoPath(videoUrl)
+
+        binding.videoViewMain.setOnPreparedListener {
+            binding.videoViewMain.start()
+
+            val mediaController = android.widget.MediaController(this)
+            mediaController.setMediaPlayer(binding.videoViewMain)
+            binding.videoViewMain.setMediaController(mediaController)
+            mediaController.setAnchorView(binding.videoViewMain)
+
+        }
+
+        //binding.videoViewMain.duration
+
+    }
+
+    override fun onStop() {
+        super.onStop()
+
+        binding.videoViewMain.stopPlayback()
     }
 }
