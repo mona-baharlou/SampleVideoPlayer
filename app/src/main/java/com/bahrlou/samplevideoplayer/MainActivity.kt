@@ -9,6 +9,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.bahrlou.samplevideoplayer.databinding.ActivityMainBinding
 
+val videoUrl = ""
 class MainActivity : AppCompatActivity() {
     private lateinit var player: MediaPlayer
     private lateinit var binding: ActivityMainBinding
@@ -25,7 +26,6 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
 
     }
 }
