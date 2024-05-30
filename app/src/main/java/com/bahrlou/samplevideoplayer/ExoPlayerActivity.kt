@@ -30,7 +30,6 @@ class ExoPlayerActivity : AppCompatActivity() {
 
         setUpExoplayer()
 
-
     }
 
     private fun setUpExoplayer() {
