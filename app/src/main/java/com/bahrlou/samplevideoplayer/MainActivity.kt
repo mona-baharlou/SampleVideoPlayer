@@ -10,7 +10,8 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.bahrlou.samplevideoplayer.databinding.ActivityMainBinding
 
-val videoUrl = ""
+val videoUrl = "https://dunijet.ir/video/barname%20nevis%20ha%20az%20koja%20prozhe%20migiran.mp4"
+//val videoUrl = "https://www.mp4.ir/Video?Watch=229257-488400010"
 
 class MainActivity : AppCompatActivity() {
     private lateinit var player: MediaPlayer
